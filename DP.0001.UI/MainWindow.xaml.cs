@@ -26,24 +26,25 @@ namespace DP._0001.UI
     public partial class MainWindow : Window
     {
         //WindowInteropHelper helper;
-        private readonly IAppData data;
-        private readonly EnrollmentForm _enroll;
-        private readonly VerificationForm _verification;
+        //private readonly IAppData data;
+        //private readonly EnrollmentForm _enroll;
+        //private readonly VerificationForm _verification;
         public MainWindow()
         {
             InitializeComponent();
-            data = new AppData();
-            _enroll = new(data);
-            _verification = new(data);
+            DataContext = new MainViewModel();
+            //data = new AppData();
+            //_enroll = new(data);
+            //_verification = new(data);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var boton = ((Button)sender).Content.ToString();
-            if (Equals(boton, "Enroll"))
-                _enroll.ShowDialog();
-            if (Equals(boton, "Verify"))
-                _verification.ShowDialog();
+            //var boton = ((Button)sender).Content.ToString();
+            //if (Equals(boton, "Enroll"))
+            //    _enroll.ShowDialog();
+            //if (Equals(boton, "Verify"))
+            //    _verification.ShowDialog();
 
         }
     }
